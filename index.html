@@ -15,38 +15,41 @@
 </header>
 <section class="slider">
 
-    <div class="slider_cards">
-        <input type="radio" name="slide" class="hidden" id="slide1" checked>
-        <div class="slider_card" >
-            <img src="./images/backup.jpg" alt="Backup">
+    <div class="slides">
+        <div class="slider_cards">
+            <input type="radio" name="slide" class="hidden" id="slide1" checked>
+            <input type="radio" name="slide" class="hidden" id="slide2">
+            <input type="radio" name="slide" class="hidden" id="slide3">
+            <input type="radio" name="slide" class="hidden" id="slide4">
+            <div class="slider_card move" >
+                <img src="./images/backup.jpg" alt="Backup">
+            </div>
+            <div class="slider_card">
+                <img src="./images/bitrix_in_docker.jpg" alt="Bitrix on container">
+            </div>
+            <div class="slider_card">
+                <img src="./images/policy.jpg" alt="Policy privacy">
+            </div>
+            <div class="slider_card">
+                <img src="./images/tasks_in_jira.jpg" alt="Task in jira">
+            </div>
         </div>
-        <input type="radio" name="slide" class="hidden" id="slide2">
-        <div class="slider_card">
-            <img src="./images/bitrix_in_docker.jpg" alt="Bitrix on container">
+    </div>
+    <div class="slider_wrapper">
+        <div class="slider_labels">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
         </div>
-        <input type="radio" name="slide" class="hidden" id="slide3">
-        <div class="slider_card">
-            <img src="./images/policy.jpg" alt="Policy privacy">
-        </div>
-        <input type="radio" name="slide" class="hidden" id="slide4">
-        <div class="slider_card">
-            <img src="./images/tasks_in_jira.jpg" alt="Task in jira">
+        <div class="slider_description">
+            <div class="slide1">Backup</div>
+            <div class="slide2">Bitrix on container</div>
+            <div class="slide3">Policy privacy</div>
+            <div class="slide4">Task in jira</div>
         </div>
     </div>
 
-    <div class="slider_labels">
-        <label for="slide1"></label>
-        <label for="slide2"></label>
-        <label for="slide3"></label>
-        <label for="slide4"></label>
-    </div>
-
-    <div class="slider_description">
-        <div>Backup</div>
-        <div>Bitrix on container</div>
-        <div>Policy privacy</div>
-        <div>Task in jira</div>
-    </div>
 </section>
 </body>
 </html>
