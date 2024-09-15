@@ -105,3 +105,4 @@ dist
 
 # Some .idea I don't know for what they created automaticly
 .idea/
+.DS_Store
