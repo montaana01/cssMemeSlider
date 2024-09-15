@@ -1,0 +1,83 @@
+/* Основные стили слайдера */
+.slider {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ccc;
+}
+
+/* Скрываем радиокнопки */
+.slider input {
+    display: none;
+}
+
+/* Общие стили для слайдов */
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Позиционирование слайдов при выборе */
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+/* Стили контролов */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.controls label {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls label:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Мобильная версия */
+@media screen and (max-width: 500px) {
+    .slider {
+        width: 100%;
+    }
+
+    .caption {
+        font-size: 14px;
+    }
+}
