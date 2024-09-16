@@ -9,10 +9,12 @@ body{
     max-width: 70%;
     margin: 0 auto;
     padding: 1%;
+    transition: all 0.6s ease;
 }
 header{
     width: 100%;
     h1 {
+        transition: all 0.6s ease;
         padding-top: 1%;
         font-size: 2em;
         text-align: center;
@@ -56,13 +58,15 @@ header{
 .slider_card img {
     display: block;
     margin: 0 auto;
-    width: 50%;
+    max-width: 50%;
     height: 100%;
     object-fit: cover;
     border-radius: 5%;
+    transition: all .6s ease;
 }
 .slider_bottom{
-    display: flex
+    display: flex;
+    transition: all 0.6s ease;
 }
 
 .slider_labels {
@@ -71,9 +75,20 @@ header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    column-gap: 0.5em;
+    transition: all 0.6s ease;
 }
 .slider_labels > label {
+    background:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.slider_labels > label > span{
+    display: block;
     width: 1.5em;
     height: 1.5em;
     cursor: pointer;
@@ -81,7 +96,8 @@ header{
     border-radius: 100%;
     transition: all .4s ease;
 }
-.slider_labels > label:hover {
+
+.slider_labels > label span:hover {
     border-color: transparent;
     opacity: 1;
     background-color: #fff;
@@ -94,7 +110,7 @@ header{
     overflow: hidden;
 }
 
-.card_descr {
+.card_alt {
     white-space: nowrap;
     width: 100%;
     flex-shrink: 0;
@@ -127,31 +143,70 @@ header{
 #slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
 #slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
 #slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(1){
+    transition: all 0.6s ease;
     display: none;
 }
 
-#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1),
-#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2),
-#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3),
-#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4)
+#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1) span,
+#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2) span,
+#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3) span,
+#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4) span
 {
     background-color: #515151;
     border: 0.2em solid #646ab5;
     cursor: unset;
 }
-#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1):hover,
-#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2):hover,
-#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3):hover,
-#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4)
+#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1) span:hover,
+#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2) span:hover,
+#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3) span:hover,
+#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4) span:hover
 {
     border: 0.2em solid #fff;
 }
 
+@media (max-width: 1150px) {
+    .slider_card img {
+        max-width: 60%;
+    }
+}
+@media (max-width: 930px) {
+    .slider_card img {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 870px) {
+    .slider_card img {
+        max-width: 80%;
+    }
+}
+@media (max-width: 800px) {
+    .slider_card img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 700px) {
+    .slider_card img {
+        max-width: 100%;
+    }
+}
 
 @media (max-width: 500px) {
 /*for flex mobile*/
+    body{
+        transition: all 0.6s ease;
+        max-width: unset;
+        padding: 2em;
+    }
+    header{
+        h1{
+            font-size: 1.5em;
+        }
+    }
 
     .slider_card img {
+        transition: all 0.6s ease;
         width: 100%;
     }
     .slider_bottom{
@@ -161,6 +216,15 @@ header{
         row-gap: 1em;
     }
     .slider_labels{
+        justify-content: center;
         order: 1;
+        width: unset;
     }
+
+    .slider_labels > label {
+        width: 2em;
+        height: 2em;
+    }
+
 }
+
