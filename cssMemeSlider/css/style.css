@@ -105,7 +105,7 @@ header{
 .slider_description {
     order: 1;
     display: flex;
-    width: 100%;
+    width: 50%;
     transition: all .6s ease;
     overflow: hidden;
 }
@@ -115,7 +115,6 @@ header{
     width: 100%;
     flex-shrink: 0;
     font-size: 2em;
-    text-align: left;
     transition: all .6s ease;
 }
 #slide1:checked ~ .slider_wrapper .slider_cards {
@@ -131,20 +130,18 @@ header{
     transform: translateX(-75%);
 }
 
-#slide1:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
-#slide1:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
-#slide1:checked ~ .slider_wrapper .slider_description >div:nth-child(4),
-#slide2:checked ~ .slider_wrapper .slider_description >div:nth-child(1),
-#slide2:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
-#slide2:checked ~ .slider_wrapper .slider_description >div:nth-child(4),
-#slide3:checked ~ .slider_wrapper .slider_description >div:nth-child(1),
-#slide3:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
-#slide3:checked ~ .slider_wrapper .slider_description >div:nth-child(4),
-#slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
-#slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
-#slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(1){
-    transition: all 0.6s ease;
-    display: none;
+/*description*/
+#slide1:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(0)
+}
+#slide2:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(-300%);
 }
 
 #slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1) span,
@@ -192,7 +189,7 @@ header{
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 501px) {
 /*for flex mobile*/
     body{
         transition: all 0.6s ease;
