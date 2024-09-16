@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: antiquewhite;
+}
+body{
+    background: url('../images/background.jpg') center center fixed;
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 1%;
+    transition: all 0.6s ease;
+}
+header{
+    width: 100%;
+    h1 {
+        transition: all 0.6s ease;
+        padding-top: 1%;
+        font-size: 2em;
+        text-align: center;
+    }
+}
+.hidden {
+    visibility: hidden;
+}
+
+.slider {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    margin: 0 auto;
+}
+.slides{
+    height: 60%;
+    overflow: hidden;
+}
+.slider_wrapper {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1em;
+}
+
+.slider_cards{
+    width: 400%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: all .6s ease;
+}
+.slider_card {
+    width: 25%;
+    transition: all .6s ease;
+}
+
+.slider_card img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+    transition: all .6s ease;
+}
+.slider_bottom{
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+.slider_labels {
+    order: 2;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.6s ease;
+}
+.slider_labels > label {
+    background:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.slider_labels > label > span{
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    background-color: #646ab5;
+    border-radius: 100%;
+    transition: all .4s ease;
+}
+
+.slider_labels > label span:hover {
+    border-color: transparent;
+    opacity: 1;
+    background-color: #fff;
+}
+.slider_description {
+    order: 1;
+    display: flex;
+    width: 50%;
+    transition: all .6s ease;
+    overflow: hidden;
+}
+
+.card_alt {
+    white-space: nowrap;
+    width: 100%;
+    flex-shrink: 0;
+    font-size: 2em;
+    transition: all .6s ease;
+}
+#slide1:checked ~ .slider_wrapper .slider_cards {
+    transform: translateX(0)
+}
+#slide2:checked ~ .slider_wrapper .slider_cards {
+    transform: translateX(-25%);
+}
+#slide3:checked ~ .slider_wrapper .slider_cards {
+    transform: translateX(-50%);
+}
+#slide4:checked ~ .slider_wrapper .slider_cards {
+    transform: translateX(-75%);
+}
+
+/*description*/
+#slide1:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(0)
+}
+#slide2:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slider_wrapper .slider_bottom .slider_description .move{
+    transform: translateX(-300%);
+}
+
+#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1) span,
+#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2) span,
+#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3) span,
+#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4) span
+{
+    background-color: #515151;
+    border: 0.2em solid #646ab5;
+    cursor: unset;
+}
+#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1) span:hover,
+#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2) span:hover,
+#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3) span:hover,
+#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4) span:hover
+{
+    border: 0.2em solid #fff;
+}
+
+
+@media (max-width: 1024px) {
+    body{
+        min-width: 30%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        max-width: 65%;
+    }
+}
+@media (max-width: 501px) {
+/*for flex mobile*/
+    body{
+        transition: all 0.6s ease;
+        max-width: unset;
+        padding: 2em;
+    }
+    header{
+        h1{
+            font-size: 1.5em;
+        }
+    }
+
+    .slider_card img {
+        transition: all 0.6s ease;
+        width: 100%;
+    }
+    .slider_bottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1em;
+    }
+    .slider_labels{
+        justify-content: center;
+        order: 1;
+        width: unset;
+    }
+
+    .slider_labels > label {
+        width: 2em;
+        height: 2em;
+    }
+    .slider_description {
+        width: 100%;
+    }
+}
+
