@@ -9,18 +9,16 @@ body{
     max-width: 70%;
     margin: 0 auto;
     padding: 1%;
-    position: relative;
 }
 header{
     width: 100%;
     h1 {
         padding-top: 1%;
-        font-size: 1rem;
+        font-size: 2em;
         text-align: center;
     }
 }
 .hidden {
-    position: absolute;
     visibility: hidden;
 }
 
@@ -28,17 +26,17 @@ header{
     padding-top: 1em;
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: 80vh;
+    height: 60%;
     row-gap: 20px;
     margin: 0 auto;
 }
 .slides{
-    height: 100%;
+    height: 60%;
     overflow: hidden;
 }
 .slider_wrapper {
     display: flex;
+    height: 80%;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 1em;
@@ -57,8 +55,10 @@ header{
 }
 
 .slider_card img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
     height: 100%;
-    width: 100%;
     object-fit: cover;
     border-radius: 5%;
 }
@@ -78,20 +78,19 @@ header{
     height: 1.5em;
     cursor: pointer;
     background-color: #646ab5;
+    border: 2px solid transparent;
     border-radius: 100%;
     transition: all .4s ease;
 }
-.slider_labels > label:checked{
-    border: 0.2em solid #ffffff;
-}
-
 .slider_labels > label:hover {
+    border-color: transparent;
     opacity: 1;
-    transform: scale(1.1);
+    background-color: #fff;
 }
 .slider_description {
     order: 1;
     display: flex;
+    width: 100%;
     transition: all .6s ease;
     overflow: hidden;
 }
@@ -100,6 +99,7 @@ header{
     white-space: nowrap;
     width: 100%;
     flex-shrink: 0;
+    font-size: 2em;
     text-align: left;
     transition: all .6s ease;
 }
@@ -115,24 +115,58 @@ header{
 #slide4:checked ~ .slider_wrapper .slider_cards {
     transform: translateX(-75%);
 }
-#slide1:checked ~ .slider_wrapper .slider_description {
-    transform: translateX(0)
-}
-#slide2:checked ~ .slider_wrapper .slider_description {
-    transform: translateX(-100%);
-}
-#slide3:checked ~ .slider_wrapper .slider_description {
-    transform: translateX(-200%);
-}
-#slide4:checked ~ .slider_wrapper .slider_description {
-    transform: translateX(-300%);
+
+#slide1:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
+#slide1:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
+#slide1:checked ~ .slider_wrapper .slider_description >div:nth-child(4),
+#slide2:checked ~ .slider_wrapper .slider_description >div:nth-child(1),
+#slide2:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
+#slide2:checked ~ .slider_wrapper .slider_description >div:nth-child(4),
+#slide3:checked ~ .slider_wrapper .slider_description >div:nth-child(1),
+#slide3:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
+#slide3:checked ~ .slider_wrapper .slider_description >div:nth-child(4),
+#slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(2),
+#slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(3),
+#slide4:checked ~ .slider_wrapper .slider_description >div:nth-child(1){
+    display: none;
 }
 
-
+#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1),
+#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2),
+#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3),
+#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4)
+{
+    background-color: #515151;
+    border: 0.2em solid #646ab5;
+    cursor: unset;
+}
+#slide1:checked ~ .slider_wrapper .slider_labels label:nth-child(1):hover,
+#slide2:checked ~ .slider_wrapper .slider_labels label:nth-child(2):hover,
+#slide3:checked ~ .slider_wrapper .slider_labels label:nth-child(3):hover,
+#slide4:checked ~ .slider_wrapper .slider_labels label:nth-child(4)
+{
+    border: 0.2em solid #fff;
+}
 
 
 @media (max-width: 500px) {
 /*for flex mobile*/
+
+    .slider_card img {
+        width: 100%;
+    }
+    .slider_bottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1em;
+    }
+    .slider_labels{
+        order: 1;
+    }
+    .card_descr {
+        text-align: center;
+    }
 }
 
 @media (min-width: 501px) {
